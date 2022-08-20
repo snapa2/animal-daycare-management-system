@@ -15,7 +15,7 @@ public:
 
 	void getDetails()
 	{
-		ofstream out("old-customers.txt"), ios::app);
+		ofstream out("old-customers.txt", ios::app);
 		{
 		cout << "Enter Customer ID: ";
 		cin >> custID;
@@ -46,7 +46,7 @@ public:
 			{
 				cout << "File Error!" << endl;
 			}
-			while (!in.eof())
+			while(!(in.eof()))
 			{
 				in.getline(all, 999);
 				cout << all << endl;
@@ -73,6 +73,8 @@ class Billing
 int main()
 {
 	cout << "test run" << endl;
-	Customers();
+	Customers testing;
+	testing.getDetails();
+	testing.showDetails();
 	return 0;
 }
