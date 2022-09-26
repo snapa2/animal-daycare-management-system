@@ -58,6 +58,76 @@ public:
 
 class Pets
 {
+public:
+
+	int petType;
+	char petName[20];
+	int petSize;
+	int petAge;
+	int days;
+
+	int cost;
+
+	void petDetails()
+	{
+		cout << "Enter details of pet to recieve a quote: " << endl;
+		cout << "---------- Animal Management System -----------\n" << endl;
+		cout << "1. Dog " << endl;
+		cout << "2. Cat " << endl;
+
+		cout << "Enter which animal: " << endl;
+		cin >> petType;
+		cout << "Enter name: " << endl;
+		cin >> petName;
+		cout << "Enter size: \n 1. small \n 2. medium \n 3. large" << endl;
+		cin >> petSize;
+		cout << "Enter age: " << endl;
+		cin >> petAge;
+		cout << "Enter days for stay: " << endl;
+		cin >> days;
+
+		if (petType == 1)
+		{
+			switch (petSize)
+			{
+			case 1:
+				cost = 30;
+				break;
+			case 2:
+				cost = 40;
+				break;
+			case 3:
+				cost = 50;
+				break;
+			default:
+				cout << "error" << endl;
+			}
+		}
+		else if (petType == 2)
+		{
+			switch (petSize)
+			{
+			case 1:
+				cost = 20;
+				break;
+			case 2:
+				cost = 30;
+				break;
+			case 3:
+				cost = 40;
+				break;
+			default:
+				cout << "error" << endl;
+			}
+		}
+		else
+			cout << "error" << endl;
+		
+		cost *= days;
+		cout << cost << endl;
+
+		//still completing this class
+	}
 
 };
 
@@ -73,7 +143,10 @@ class Billing
 int main()
 {
 	cout << "test run" << endl;
+	Pets test;
 	Customers testing;
+	test.petDetails();
+
 	testing.getDetails();
 	testing.showDetails();
 	return 0;
